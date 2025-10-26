@@ -5,6 +5,8 @@ const postSchema = new mongoose.Schema({
   user_id: { type: String, required: true },
   post_type: { type: String, enum: ["text", "media"], default: "text" },
   created_at: { type: Date, default: Date.now },
+  commentsTotal: {type: Number, required: true, default: 0},
+  likesTotal: {type: Number, required: true, default : 0},
 
   // For text or media posts
   content_text: { type: String },
