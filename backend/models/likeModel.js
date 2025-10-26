@@ -1,9 +1,10 @@
 import mongoose from "mongoose";
 
 const likeSchema = new mongoose.Schema({
-  user_id: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
-  post_id: { type: mongoose.Schema.Types.ObjectId, ref: "Post" },
-  comment_id: { type: mongoose.Schema.Types.ObjectId, ref: "Comment" },
+  like_id: { type: String, required: true, unique: true },
+  user_id: { type: String, required: true },
+  post_id: { type: String, required:true },
+  comment_id: { type: String },
   created_at: { type: Date, default: Date.now }
 });
 
