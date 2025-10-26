@@ -55,7 +55,7 @@ export const login=async(req,resp)=>{
         if(!boolean){
             return resp.status(401).json({message:"Invalid credentials. Please check again!"});
         }
-        const token=jwt.sign({username:currentUser.username, emailid:emailid},key);
+        const token=jwt.sign({username:currentUser.username, emailid:emailid},key,{expiresIn:"6h"});
         //delete currentUser.password;//this doesn't work
 
         resp.json({success: true,token});
